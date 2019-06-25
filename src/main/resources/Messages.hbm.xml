@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.Message" table="messages" schema="picturetagdatabase">
+        <id name="messageId">
+            <column name="messageId" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="userId">
+            <column name="userId" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="flag">
+            <column name="flag" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="messageContent">
+            <column name="messageContent" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="messageTime">
+            <column name="messageTime" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

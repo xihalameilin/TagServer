@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.Taskstatusrecord" table="taskstatusrecord" schema="picturetagdatabase">
+        <id name="id">
+            <column name="ID" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="userId">
+            <column name="userID" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="taskId">
+            <column name="taskID" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="Status" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="points">
+            <column name="points" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="obtainedTime">
+            <column name="obtainedTime" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="commitTime">
+            <column name="commitTime" sql-type="timestamp" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.AreaTagSet" table="areatagsets" schema="picturetagdatabase">
+        <id name="areaTagSetId">
+            <column name="areaTagSetID" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="url">
+            <column name="url" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="userId">
+            <column name="userID" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="taskId">
+            <column name="taskID" sql-type="varchar(20)" length="20"/>
+        </property>
+        <set name="areaTags" inverse="true" lazy="false">
+            <key>
+                <column name="areaTagSetID" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.example.demo.HibernateEntity.AreaTag"/>
+        </set>
+    </class>
+</hibernate-mapping>

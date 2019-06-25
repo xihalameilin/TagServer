@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.OverallTag" table="overalltag" schema="picturetagdatabase">
+        <id name="overallTagId">
+            <column name="OverallTagID" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="url">
+            <column name="url" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="userID" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="taskId">
+            <column name="taskID" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="overallTitle">
+            <column name="overallTitle" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="overallDescription">
+            <column name="overallDescription" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="fontSize">
+            <column name="fontSize" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="fontFamily">
+            <column name="fontFamily" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

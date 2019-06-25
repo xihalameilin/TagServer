@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.Awards_Ranking" table="awards_ranking" schema="picturetagdatabase">
+        <id name="userId">
+            <column name="userID" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="points">
+            <column name="points" sql-type="double" precision="-1"/>
+        </property>
+        <property name="ranking">
+            <column name="ranking" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

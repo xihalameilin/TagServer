@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/PictureTagDatabase?serverTimezone=GMT%2B8</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">spiderroot</property>
+
+        <!--相关的属性-->
+        <property name="hbm2ddl.auto">update</property>
+        <!--格式化控制台显示的MySQL语句-->
+        <property name="format_sql">true</property>
+        <!--在控制台显示执行的MySQL语句-->
+        <property name="show_sql">false</property>
+        <!--使用MySQL数据库的方言-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <mapping resource="Areatags.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.AreaTag"/>
+
+        <mapping resource="Areatagsets.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.AreaTagSet"/>
+
+        <mapping resource="Managers.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Manager"/>
+
+        <mapping resource="AwardsRanking.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Awards_Ranking"/>
+
+        <mapping resource="Requestors.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Requestor"/>
+
+        <mapping resource="Workers.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Worker"/>
+
+        <mapping resource="Circletags.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.CircleTag"/>
+
+        <mapping resource="Circletagsets.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.CircleTagSet"/>
+
+        <mapping resource="Imageurls.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Imageurls"/>
+
+        <mapping resource="Overalltag.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.OverallTag"/>
+
+        <mapping resource="Task.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Task"/>
+
+        <mapping resource="Taskstatusrecord.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Taskstatusrecord"/>
+
+        <mapping resource="Options.hbm.xml"/>
+        <mapping class="com.example.demo.HibernateEntity.Options"/>
+
+        <mapping class="com.example.demo.HibernateEntity.Message"/>
+        <mapping resource="Messages.hbm.xml"/>
+
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

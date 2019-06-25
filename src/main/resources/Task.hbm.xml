@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.Task" table="task" schema="picturetagdatabase">
+        <id name="taskId">
+            <column name="taskID" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="requestorId">
+            <column name="requestorID" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="beginTime">
+            <column name="beginTime" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="endTime">
+            <column name="endTime" sql-type="timestamp" not-null="true"/>
+        </property>
+        <property name="taskName">
+            <column name="taskName" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="taskDescription">
+            <column name="taskDescription" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="workingNum">
+            <column name="workingNum" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="finishNum">
+            <column name="finishNum" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="points">
+            <column name="points" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="workerLevel">
+            <column name="workerLevel" sql-type="double" precision="-1" not-null="true"/>
+        </property>
+        <property name="labels">
+            <column name="labels" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <set name="imageUrls" inverse="true" lazy="false">
+            <key>
+                <column name="taskID" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.example.demo.HibernateEntity.Imageurls"/>
+        </set>
+        <set name="options" inverse="true" lazy="false">
+            <key>
+                <column name="taskID" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.example.demo.HibernateEntity.Options"/>
+        </set>
+    </class>
+</hibernate-mapping>

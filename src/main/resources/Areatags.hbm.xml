@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.demo.HibernateEntity.AreaTag" table="areatags" schema="picturetagdatabase">
+        <id name="areaTagId">
+            <column name="areaTagID" sql-type="int(11)"/>
+            <generator class="increment"/>
+        </id>
+        <property name="areaTagSetId">
+            <column name="areaTagSetID" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="label">
+            <column name="label" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="beginX">
+            <column name="beginX" sql-type="varchar(3000)" length="3000" not-null="true"/>
+        </property>
+        <property name="beginY">
+            <column name="beginY" sql-type="varchar(3000)" length="3000" not-null="true"/>
+        </property>
+        <property name="endX">
+            <column name="endX" sql-type="varchar(3000)" length="3000" not-null="true"/>
+        </property>
+        <property name="endY">
+            <column name="endY" sql-type="varchar(3000)" length="3000" not-null="true"/>
+        </property>
+        <property name="drawColor">
+            <column name="drawColor" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="drawSize">
+            <column name="drawSize" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="fontSize">
+            <column name="fontSize" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="fontFamily">
+            <column name="fontFamily" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="tagOption">
+            <column name="tagOption" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
